@@ -6,7 +6,7 @@ ENV MINICONDA_URL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x8
 
 RUN apt-get update -y && apt-get upgrade -y
 
-RUN sudo apt-get install -y \
+RUN apt-get install -y \
     gfortran-7 \
     libboost-dev \
     libblas-dev \
