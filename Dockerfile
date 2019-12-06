@@ -26,6 +26,8 @@ RUN apt-get install -y \
     libtrilinos-ml-dev \
     libtrilinos-teuchos-dev
 
+RUN /usr/sbin/update-ccache-symlinks && echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
+
 CMD [ "/bin/bash" ]
 
 WORKDIR $HOME
