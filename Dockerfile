@@ -10,6 +10,7 @@ RUN apt-get install -y \
     build-essential \
     cmake \
     ccache \
+    git \
     python3-dev \
     gfortran-7 \
     libboost-dev \
