@@ -27,7 +27,7 @@ RUN apt-get install -y \
     libtrilinos-ml-dev \
     libtrilinos-teuchos-dev
 
-RUN add-apt-repository ppa:git-core/ppa && apt-get update && apt-get install git
+RUN add-apt-repository ppa:git-core/ppa && apt-get update -y && apt-get install -y git
 
 RUN /usr/sbin/update-ccache-symlinks && echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
 
