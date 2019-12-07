@@ -12,3 +12,8 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Publish
+      run: |
+        docker login docker.pkg.github.com --username oberbichler
+        docker tag oberbichler/kratos-dev docker.pkg.github.com/oberbichler/kratos-dev/kratos-dev:latest
+        docker push docker.pkg.github.com/oberbichler/kratos-dev/kratos-dev:latest
