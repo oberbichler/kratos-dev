@@ -31,7 +31,8 @@ RUN add-apt-repository ppa:git-core/ppa && apt-get update -y && apt-get install 
 
 RUN /usr/sbin/update-ccache-symlinks && echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
 
-RUN pip3 install -y numpy scipy
+RUN python3 -m pip install --upgrade pip && \
+    pip3 install numpy scipy
 
 CMD [ "/bin/bash" ]
 
