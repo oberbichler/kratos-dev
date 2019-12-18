@@ -3,22 +3,17 @@ name: Docker Image CI
 on: [push]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag oberbichler/kratos-dev:latest
+      run: docker build . --file Dockerfile --tag oberbichler/kratos-dev
     - name: Docker Login
       uses: azure/docker-login@v1
       with:
-        login-server: docker.pkg.github.com
-        username: $GITHUB_ACTOR
-        password: ${{ secrets.GITHUB_TOKEN }}
-    - name: Publish
-      run: |
-        docker tag oberbichler/kratos-dev docker.pkg.github.com/oberbichler/kratos-dev/kratos-dev:latest
-        docker push docker.pkg.github.com/oberbichler/kratos-dev/kratos-dev:latest
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Publish the Docker image
+      run: docker push oberbichler/kratos-dev
