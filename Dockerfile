@@ -18,6 +18,9 @@ RUN apt-get install -y \
     liblapack-dev \
     libopenmpi-dev \
     openmpi-bin \
+    libhdf5-dev \
+    libhdf5-openmpi-dev \
+    python3-h5py \
     libmetis-dev \
     libtrilinos-amesos-dev \
     libtrilinos-aztecoo-dev \
