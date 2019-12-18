@@ -10,6 +10,7 @@ RUN apt-get install -y \
     cmake \
     ccache \
     python3-dev \
+    python3-pip \
     libeigen3-dev \
     gfortran-7 \
     libboost-dev \
@@ -30,7 +31,7 @@ RUN add-apt-repository ppa:git-core/ppa && apt-get update -y && apt-get install 
 
 RUN /usr/sbin/update-ccache-symlinks && echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc
 
-RUN pip3 install -y scipy
+RUN pip3 install -y numpy scipy
 
 CMD [ "/bin/bash" ]
 
