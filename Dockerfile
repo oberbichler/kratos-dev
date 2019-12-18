@@ -5,30 +5,30 @@ ENV HOME /root
 RUN apt-get update -y && apt-get upgrade -y
 
 RUN apt-get install -y \
-    software-properties-common \
     build-essential \
-    cmake \
     ccache \
-    python3-dev \
-    python3-pip \
-    libeigen3-dev \
+    cmake \
     gfortran-7 \
-    libboost-dev \
     libblas-dev \
-    liblapack-dev \
-    libopenmpi-dev \
-    openmpi-bin \
+    libboost-dev \
+    libeigen3-dev \
     libhdf5-dev \
     libhdf5-openmpi-dev \
-    python3-h5py \
+    liblapack-dev \
     libmetis-dev \
+    libopenmpi-dev \
     libtrilinos-amesos-dev \
     libtrilinos-aztecoo-dev \
     libtrilinos-epetra-dev \
     libtrilinos-epetraext-dev \
     libtrilinos-ifpack-dev \
     libtrilinos-ml-dev \
-    libtrilinos-teuchos-dev
+    libtrilinos-teuchos-dev \
+    openmpi-bin \
+    python3-dev \
+    python3-h5py \
+    python3-pip \
+    software-properties-common
 
 RUN add-apt-repository ppa:git-core/ppa && apt-get update -y && apt-get install -y git
 
