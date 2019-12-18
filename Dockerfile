@@ -12,12 +12,16 @@ RUN apt-get install -y \
     cmake \
     ccache \
     python3-dev \
+    python3-numpy \
     gfortran-7 \
     libboost-dev \
     libblas-dev \
     liblapack-dev \
     libopenmpi-dev \
     openmpi-bin \
+    libhdf5-dev \
+    libhdf5-openmpi-dev \
+    python3-h5py \
     libmetis-dev \
     libtrilinos-amesos-dev \
     libtrilinos-aztecoo-dev \
