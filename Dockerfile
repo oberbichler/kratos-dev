@@ -2,8 +2,6 @@ FROM ubuntu:bionic
 
 ENV HOME /root
 
-ADD mmg-5.4.1 /usr/local
-
 RUN apt-get update -y && apt-get upgrade -y && \
     apt-get -y install \
         gnupg2 \
@@ -47,6 +45,12 @@ RUN apt-get update -y && apt-get upgrade -y && \
     pip3 install \
         numpy \
         scipy && \
+    git clone -b 'v5.4.1' --depth 1 https://github.com/MmgTools/mmg /tmp/mmg && \
+    mkdir /tmp/mmg/build && \
+    cd /tmp/mmg/build && \
+    cmake .. && \
+    make install && \
+    rm -r /tmp/mmg && \
     apt-get -y remove \
         gnupg2 \
         software-properties-common \
