@@ -22,7 +22,6 @@ RUN apt-get update -y && apt-get upgrade -y && \
         intel-mkl-2020.0-088 \
         libblas-dev \
         libboost-dev \
-        libeigen3-dev \
         libhdf5-dev \
         libhdf5-openmpi-dev \
         liblapack-dev \
