@@ -27,6 +27,7 @@ RUN apt-get update -y && apt-get upgrade -y && \
         liblapack-dev \
         libmetis-dev \
         libopenmpi-dev \
+        libscotch-dev \
         libtrilinos-amesos-dev \
         libtrilinos-aztecoo-dev \
         libtrilinos-epetra-dev \
@@ -48,7 +49,7 @@ RUN apt-get update -y && apt-get upgrade -y && \
     git clone -b 'v5.4.1' --depth 1 https://github.com/MmgTools/mmg /tmp/mmg && \
     mkdir /tmp/mmg/build && \
     cd /tmp/mmg/build && \
-    cmake .. && \
+    cmake .. -DLIBMMG3D_SHARED=ON -DLIBMMG2D_SHARED=ON -DLIBMMGS_SHARED=ON -DLIBMMG_SHARED=ON && \
     make install && \
     rm -r /tmp/mmg && \
     apt-get -y remove \
