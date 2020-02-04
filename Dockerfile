@@ -37,7 +37,8 @@ RUN apt-get update -y && apt-get upgrade -y && \
         openmpi-bin \
         python3-dev \
         python3-h5py \
-        python3-pip && \
+        python3-pip \
+        valgrind && \
     /usr/sbin/update-ccache-symlinks && \
     echo 'export PATH="/usr/lib/ccache:$PATH"' | tee -a ~/.bashrc && \
     python3 -m pip install --upgrade pip && \
