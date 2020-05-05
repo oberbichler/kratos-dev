@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 
 ENV HOME /root
 
-RUN apt-get update -y && apt-get upgrade -y && \
+RUN apt-get update -y && \
     apt-get -y install \
         gnupg2 \
         software-properties-common \
